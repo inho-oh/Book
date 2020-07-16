@@ -17,6 +17,7 @@ public class Book {
 
     @PostPersist
     public void onPostPersist(){
+
         BookRegistered bookRegistered = new BookRegistered();
         BeanUtils.copyProperties(this, bookRegistered);
         bookRegistered.publishAfterCommit();
